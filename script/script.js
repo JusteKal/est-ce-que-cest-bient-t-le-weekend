@@ -24,10 +24,11 @@ function mardi() {
     } else if (dayOfWeek === 3 || dayOfWeek === 4 || dayOfWeek === 5) {
         autresJours.innerHTML = "C'est bientôt le weekend :D";
         autresJours.classList.add('autresJours');
-    } else {
+    if (dayOfWeek === 6 || dayOfWeek === 7) {
         autresJours.innerHTML = "C'est déjà le weekend ! Pourquoi tu demandes ?";
         autresJours.classList.add('autresJours');
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', mardi);
