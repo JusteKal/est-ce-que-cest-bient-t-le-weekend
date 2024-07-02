@@ -6,11 +6,12 @@ function mardi() {
     const videoContainer = document.getElementById('video-container');
     const video = videoContainer.querySelector('video');
 
-    
     if (dayOfWeek === 2) {
         videoContainer.style.display = 'block';
         video.setAttribute('autoplay', true); 
         video.play(); 
+        autresJours.innerHTML = "C'est mardi ! C'est bientôt le weekend !";
+        autresJours.classList.add('autresJours');
     } else {
         videoContainer.style.display = 'none';
         video.removeAttribute('autoplay'); 
@@ -24,11 +25,10 @@ function mardi() {
     } else if (dayOfWeek === 3 || dayOfWeek === 4 || dayOfWeek === 5) {
         autresJours.innerHTML = "C'est bientôt le weekend :D";
         autresJours.classList.add('autresJours');
-    if (dayOfWeek === 6 || dayOfWeek === 7) {
+    } else if (dayOfWeek === 0 || dayOfWeek === 6) { 
         autresJours.innerHTML = "C'est déjà le weekend ! Pourquoi tu demandes ?";
         autresJours.classList.add('autresJours');
     }
 }
-
 
 document.addEventListener('DOMContentLoaded', mardi);
